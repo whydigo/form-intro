@@ -1,0 +1,31 @@
+.App {
+    text-align: center;
+}
+
+input {
+    width: 250px;
+    height: 30px;
+}
+
+button {
+    height: 35px; 
+}
+
+.text {
+    font-style: italic;
+    padding-top: 5px;
+    padding-right: 100px;
+}
+
+.right {
+    color: rgb(104, 207, 104);
+}
+
+.wrong {
+    color: red;
+    padding-right: 80px;
+}
+
+.error {
+    box-shadow: -5px 0px 25px -5px red;
+}

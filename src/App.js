@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from 'react';
+import './style.css'
 function App() {
+  const [text, setText] = useState('')
+
+  const handleSetInput = (e) => {
+    setText(e.target.value)
+    setSended(false)
+  }
+
+  const handleSubmit = (e) => {
+    console.log(text)
+    e.preventDefault()
+    setText('')
+    setSended(true)
+    setBlur(false)
+  }
+
+  const handleBlur = () => {
+    setBlur(true)
+    setSended(false)
+  }
+
+  const [blur, setBlur] = useState(false)
+  const [sended, setSended] = useState(false)
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form onSubmit={handleSubmit}>
+        <input type='text' value={text} onChange={handleSetInput} onBlur={handleBlur} className={!text && blur ? "error" : "norm"}/>
+        <button  type='submit'>
+          Отправить
+        </button>
+      </form>
+      {sended && <div className='text right'>Сообщение успешно отправлено</div>}
+      {(!text && blur) && <div className='text wrong'>Поле ввода не должно быть пустым</div>}
     </div>
   );
 }
