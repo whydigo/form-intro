@@ -28,8 +28,12 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
-        <input type='text' value={text} onChange={handleSetInput} onBlur={handleBlur} className={!text && blur ? "error" : "norm"}/>
-        <button  type='submit'>
+        <input type='text' 
+        value={text} 
+        onChange={handleSetInput} 
+        onBlur={handleBlur} 
+        className={!text && blur ? "error" : "norm"}/>
+        <button  type='submit' disabled={!text && true}>
           Отправить
         </button>
       </form>
