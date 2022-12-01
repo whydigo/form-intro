@@ -8,7 +8,27 @@ input {
 }
 
 button {
-    height: 35px; 
+    border: 0px;
+    height: 35px;
+    color: white;
+    border-radius: 3px;
+}
+
+.sub {
+    background-color: rgb(19, 133, 255);
+    border-radius: 3px;
+}
+
+.sub:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 2px rgb(19, 133, 255);
+}
+
+.notsub {
+    background-color:rgb(255, 187, 187)
+}
+.notsub:hover {
+    cursor:not-allowed;
 }
 
 .text {
@@ -28,4 +48,30 @@ button {
 
 .error {
     box-shadow: -5px 0px 25px -5px red;
+}
+
+.tags {
+    margin: auto;
+    width: 360px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tag {
+    margin: 10px 5px;
+    padding: 5px 10px;
+    color:rgb(19, 133, 255);
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 20px;
+    background-color: rgb(19, 133, 255, 0.377);
+}
+
+.dlt {
+    color: rgba(104, 215, 255, 0.8);
+    background-color: rgb(19, 133, 255);
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 20px;
 }
